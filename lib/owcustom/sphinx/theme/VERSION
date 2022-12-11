@@ -1,0 +1,8 @@
+2022.12
+
+The first line of this file declares the owcustom-sphinx-theme package
+version.  It is read by setup.py and lib/owcustom/sphinx/theme/__init__.py.
+All other lines are ignored.
+
+The version number scheme is <release year>.<release number>, a lightweight
+Calendar Versioning <https://calver.org> scheme.

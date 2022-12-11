@@ -1,0 +1,44 @@
+name: Publish to PyPI
+on:
+  workflow_dispatch:
+    inputs:
+      pypi_instance:
+        # PyPI has a separate instance which can be used for testing purposes.
+        description: 'PyPI instance for publishing'
+        required: true
+        default: 'PyPI'
+        type: choice
+        options:
+        - 'TestPyPI'
+        - 'PyPI'
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - run: python3 -m pip install --upgrade build twine
+      # Generate the source and binary distributions with setup.py
+      # https://packaging.python.org/tutorials/packaging-projects/#generating-distribution-archives
+      - run: python3 -m build
+      # Upload build as workflow artifact in case we need it
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist/
+      - name: 'Publish to TestPyPI'
+        if: ${{ github.event.inputs.pypi_instance == 'TestPyPI' }}
+        run: twine upload dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          TWINE_REPOSITORY_URL: https://test.pypi.org/legacy/
+      - name: 'Publish to PyPI'
+        if: ${{ github.event.inputs.pypi_instance == 'PyPI' }}
+        run: twine upload dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+          TWINE_REPOSITORY_URL: https://upload.pypi.org/legacy/
