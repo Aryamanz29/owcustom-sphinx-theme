@@ -45,11 +45,11 @@ Releasing
 
 1. Make sure all your changes have been commited to the ``main`` branch.
 2. Add a commit which describes the changes from the previous version to ``CHANGES.rst`` and updates the version number in ``lib/owcustom/sphinx/theme/VERSION``.
-3. Tag this commit with the version number, e.g. ``git tag -a 2022.12 -m "version 2020.12"``.
-4. Push the commit and tag to GitHub, e.g. ``git push origin main 2020.12``.
+3. Tag this commit with the version number, e.g. ``git tag -a 2022.12 -m "version 2022.12"``.
+4. Push the commit and tag to GitHub, e.g. ``git push origin main 2022.12``.
 5. Publish to PyPI by invoking a GitHub Actions workflow:
 
-   1. Go to the workflow: `publish.yml <https://github.com/owcustom/sphinx-theme/actions/workflows/publish.yml>`_.
+   1. Go to the workflow: `publish.yml <https://github.com/Aryamanz29/owcustom-sphinx-theme/actions/workflows/publish.yml>`_.
    2. Select **Run workflow**. In the new menu:
 
       1. Select **Use workflow from** > **Tags** > new version number (e.g. 2022.12).
