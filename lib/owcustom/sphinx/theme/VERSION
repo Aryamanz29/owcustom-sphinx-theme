@@ -1,4 +1,4 @@
-2022.12
+2022.12.12.1
 
 The first line of this file declares the owcustom-sphinx-theme package
 version.  It is read by setup.py and lib/owcustom/sphinx/theme/__init__.py.
