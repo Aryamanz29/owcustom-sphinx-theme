@@ -4,6 +4,8 @@ owcustom sphinx theme
 A `Sphinx theme`_ for OpenWISP docs, based on `Read The Docs`_
 default theme (sphinx_rtd_theme_).
 
+**Live demo:** https://owcustom-sphinx-theme.readthedocs.io/en/latest/
+
 .. figure:: https://user-images.githubusercontent.com/56113566/206928233-e2ec9653-651c-4b63-95d4-d351aa5f674a.png
   :align: center
 
@@ -56,7 +58,7 @@ Releasing
       2. Set **PyPI instance for publishing** as *PyPI* (default) or *TestPyPI*. `More info <https://packaging.python.org/en/latest/guides/using-testpypi/>`_
       3. Select **Run workflow**.
 
-.. _Sphinx theme: https://www.sphinx-doc.org/en/master/theming.html
+.. _Sphinx theme: https://www.sphinx-doc.org/en/master/development/theming.html
 .. _Read The Docs: https://readthedocs.org
 .. _sphinx_rtd_theme: https://github.com/readthedocs/sphinx_rtd_theme
 .. _owcustom-sphinx-theme: https://pypi.org/project/owcustom-sphinx-theme/
